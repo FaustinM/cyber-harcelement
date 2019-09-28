@@ -7,5 +7,5 @@ function setPseudo() {
         return false
     }
     localStorage.setItem('pseudo', pseudo);
-    window.location.href = window.location.origin + "index.html";
+    window.location.href = "./index.html";
 }
