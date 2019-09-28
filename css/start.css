@@ -1,0 +1,113 @@
+@keyframes fadeinout {
+    0%,100% { opacity: 0 }
+    45%,50%,55% { opacity: 1 }
+}
+@-webkit-keyframes fadeinout {
+    0%,100% { opacity: 0; }
+    45%,50%,55% { opacity: 1; }
+}
+
+@keyframes fadein {
+     0% { opacity: 0 }
+     100% { opacity: 1 }
+ }
+@-webkit-keyframes fadein {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #171B27;
+    font-family: 'Varela Round', sans-serif;
+}
+
+
+.fade {
+    animation: fadeinout 4s linear;
+}
+
+.text {
+    font-size: 300%;
+    text-center:align;
+    color: whitesmoke;
+    background-color: transparent;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    vertical-align: text-bottom;
+}
+#mobile{
+    display: none;
+}
+#info1 {
+    opacity: 0;
+}
+#info2 {
+    -moz-animation-delay: 4s;
+    animation-delay: 4s;
+    opacity: 0;
+}
+#info3 {
+    -moz-animation-delay: 8s;
+    animation-delay: 8s;
+    opacity: 0;
+}
+#info4 {
+    -moz-animation-delay: 12s;
+    animation-delay: 12s;
+    opacity: 0;
+}
+#loginForm{
+    -webkit-transition: opacity 2s ease-in;
+    -moz-transition: opacity 2s ease-in;
+    -ms-transition: opacity 2s ease-in;
+    -o-transition: opacity 2s ease-in;
+    transition: opacity 2s ease-in;
+    opacity: 0;
+}
+#loginForm.show{
+    opacity: 1;
+}
+#iPseudo{
+    -webkit-transition: background-color 0.5s ease-in;
+    -moz-transition: background-color 0.5s ease-in;
+    -ms-transition: background-color 0.5s ease-in;
+    -o-transition: background-color 0.5s ease-in;
+    transition: background-color 0.5s ease-in;
+
+    border-radius: 25px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #eee;
+    font-size: 25px;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-bottom: 0px;
+    background-color: #171B27;
+}
+#iPseudo:hover, #iPseudo:focus{
+    background-color: #1d212e;
+}
+
+@media only screen and (max-device-width: 480px) {
+    * {
+        display: none;
+    }
+    body,html,head {
+        background-color: transparent;
+        display: block;
+    }
+    #mobile{
+        display: block;
+        color: red;
+    }
+}
