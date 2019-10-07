@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+
+<head>
+    <!-- /*! Author: Efranelas | MIT License | github.com/efranelas/facebook-clone | twitter.com/efranelas */-->
+    <!-- /*! Author: FaustinM | MIT License | github.com/FaustinM/facebook-clone | twitter.com/faustinn_ */-->
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="IE=edge,chrome=1" name="X-UA-Compatible" />
+    <link href="https://facebook.com/favicon.ico" rel="shortcut icon" />
+
+    <meta content="index, follow" name="robots" />
+    <meta content="facebook, cyber, harcelement" name="keywords" />
+    <meta content="Un jeu à choix multiples pour la simuation d'un cyber-harcélement" name="description" />
+    <meta content="FaustinM" name="author" />
+    <meta content="FaustinM" name="designer" />
+    <meta content="fr" name="language" />
+    <!-- opengraph -->
+    <meta content="Cyber-Harcelement par Faustin & Yorick" property="og:title">
+    <meta content="Un jeu à choix multiples pour la simuation d'un cyber-harcélement" property="og:description">
+    <meta content="https://efranelas.github.io/facebook-clone/img/splash.png" property="og:image">
+    <meta content="1280" property="og:image:width">
+    <meta content="720" property="og:image:height">
+    <meta content="image/png" property="og:image:type">
+    <meta content="website" property="og:type">
+    <meta content="en_US" property="og:locale">
+    <meta content="Cyber-Harcelement par Faustin & Yorick" property="og:site_name">
+    <meta content="https://efranelas.github.io/facebook-clone/index.html" property="og:url">
+    <!-- twitter -->
+    <meta content="summary_large_image" property="twitter:card">
+    <meta content="Cyber-Harcelement par Faustin & Yorick" property="twitter:title">
+    <meta content="Un jeu à choix multiples pour la simuation d'un cyber-harcélement" property="twitter:description">
+    <meta content="https://efranelas.github.io/facebook-clone/img/splash.png" property="twitter:image">
+    <link href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" rel="stylesheet">
+    <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet" />
+    <link href="css/facebook.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+
+    <title>Cyber-Harcelement par Faustin & Yorick</title>
+</head>
+
+<body>
+<template id="t-Post">
+    <article class="section">
+        <div class="main-section">
+            <header>
+                <div class="row">
+                    <div class="col profile-picture">
+                        <img class="js-picture" alt="Photo de profile" src="img/user-picture.png" />
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            <a class="author" href="#">Pseudo (erreur)</a>
+                        </div>
+                        <div class="row">
+                            <a class="date" href="#">Date (erreur)</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <section class="content">
+                <p>Contenu du post (erreur)</p>
+            </section>
+        </div>
+        <footer>
+            <div class="row post-info">
+                <div class="col left">
+                    <i class="fa fa-heart" style="color: rgba(255, 0, 0, 0.8);"></i><span class="likes"></span>
+                </div>
+                <div class="col right counter">
+                    x Commentaire(s) y Partage(s)
+                </div>
+            </div>
+            <div class="row buttons">
+                <div class="content">
+                    <a class="button js-like" href="#"><i class="far fa-thumbs-up"></i> J'aime</a>
+                    <a class="button" href="#"><i class="far fa-comment-alt"></i> Commenter</a>
+                    <a class="button" href="#"><i class="far fa-paper-plane"></i> Partager</a>
+                </div>
+            </div>
+        </footer>
+    </article>
+</template>
+<header>
+    <div class="container">
+        <div class="inline logo-container">
+            <a class="inline block logo" href="/">f</a>
+        </div>
+        <div class="inline nav-form-container">
+            <form action="search.php" class="nav_form" method="POST">
+                <input class="nav_search_box" disabled="" placeholder="Recherche..." type="text" value="" />
+                <button class="block nav_submit" name="submit" type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <div class="inline nav_buttons">
+            <i class="y-divisor"></i>
+
+            <a class="button user" href="#"><i class="user-icon"></i> <span class="js-Pseudo">Efranelas</span></a>
+            <a class="button" href="#">Accueil</a>
+
+            <i class="y-divisor"></i>
+        </div>
+
+        <div id="notification">
+            <i class="fa fa-bell" data-count="5" id="bell"></i>
+            <div id="notifContent">
+                <p class="notifElement">Salut</p>
+            </div>
+        </div>
+        <div class="inline nav_right_menu">
+            <div class="menu-container">
+                <i class="dropdown-collapser fa fa-bars block" id="dropdown-button"></i>
+                <div id="menu-dropdown">
+                    <a href="#mygroups">Vos Groupes</a>
+                    <div class="h-divisor"></div>
+                    <a href="https://fr-fr.facebook.com/business/ads">Publicité sur Facebook</a>
+                    <div class="h-divisor"></div>
+                    <a href="#log">Journal d'activité</a>
+                    <a href="#settings/feed">Préférence du fil d'actualité</a>
+                    <a href="#">Réglages</a>
+                    <a href="index.html" onclick="delete localStorage.clear()">Déconnexion</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+<section class="profile">
+    <div class="container">
+        <div class="profile-body">
+            <aside class="sidebar">
+                <div class="section introduction">
+                    <header>
+                        <i class="fa fa-globe-americas badge badge-intro"></i>
+                        <a>Introduction</a>
+                    </header>
+                    <div class="content">
+                        <div class="row resume-container">
+                            <p class="resume">Vous êtes nouveau sur Facebook ! Vous vous êtes inscrit suite à la rentrée des classes !</p>
+                        </div>
+                        <div class="row">
+                            <div class="col icon"><i class="fas fa-heart"></i></div>
+                            <div class="col">
+                                Célibataire !
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="col">
+                                Vit à <a href="#">Clermont-Ferrand</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col icon"><i class="fa fa-graduation-cap"></i></div>
+                            <div class="col">
+                                Lycéen au <a href="#">Lycée Victor Hugo</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col icon"><i class="fa fa-rss"></i></div>
+                            <div class="col">
+                                Amis avec <a href="#">58 personnes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section photos">
+                    <header>
+                        <i class="fa fa-images badge badge-photos"></i>
+                        <a href="#fotos">Photos</a>
+                    </header>
+                    <div class="content">
+                        <div class="row">
+                            <div class="col"><a href="#"><img src="img/user-picture.png" width="100%" /></a></div>
+                            <div class="col"><a href="#"><img src="img/user-picture.png" width="100%" /></a></div>
+                            <div class="col"><a href="#"><img src="img/user-picture.png" width="100%" /></a></div>
+                        </div>
+                        <div class="row">
+                            <div class="col"><a href="#"><img src="img/user-picture.png" width="100%" /></a></div>
+                            <div class="col"><a href="#"><img src="img/user-picture.png" width="100%" /></a></div>
+                            <div class="col"><a href="#"><img src="img/user-picture.png" width="100%" /></a></div>
+                        </div>
+                        <div class="row">
+                            <div class="col"><a href="#"><img src="img/user-picture.png" width="100%" /></a></div>
+                            <div class="col"><a href="#"><img src="img/user-picture.png" width="100%" /></a></div>
+                            <div class="col"><a href="#"><img src="img/user-picture.png" width="100%" /></a></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="section languages">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col">
+                                <a>Français (France)</a> ·
+                                <a href="#">English (US)</a> ·
+                                <a href="#">Chinese</a> ·
+                                <a href="#">Français (Québec)</a> ·
+                                <a href="#" onclick="new Audio('./img/Animalese.mp3').play()">Animalese</a>
+                            </div>
+                            <div class="col plus-box">
+                                <i class="fa fa-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section main footer">
+                    <footer class="main-footer">
+                        <div class="content">
+                            <a href="https://www.facebook.com/about/privacy/update">Vie Privé</a> ·
+                            <a href="https://fr-fr.facebook.com/legal/terms">CGU</a> ·
+                            <a href="https://fr-fr.facebook.com/business/ads">Publicité</a> ·
+                            <a href="https://www.facebook.com/help/568137493302217">Choisir sa pub <i class="fa fa-ad" style="font-size: 0.8rem;"></i></a> ·
+                            <a href="https://www.facebook.com/policies/cookies/">Cookies</a> ·
+                            <a href="https://github.com/FaustinM">Plus</a>
+                            <div class="row copyright">Faustin & Yorick &copy; MIT License 2019</div>
+                        </div>
+                    </footer>
+                </div>
+            </aside>
+
+            <main class="publications">
+            </main>
+            <div id="chat" class="chat-bubble hide" style="background: url(./img/face/31.jpg) no-repeat; background-size: cover">
+                <div class="msgs"></div>
+                <div class="status"></div>
+            </div>
+            <div id="chatBox" class="chat-box hide p1">
+                <div id="chatProfile">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/1_copy.jpg" style="" class="floatingImg">
+                    <div id="close">
+                        <div class="cy"></div>
+                        <div class="cx"></div>
+                    </div>
+
+                    <p id="chatName">Miro Badev</p>
+                    <span>miro@badev@gmail.com</span>
+                </div>
+                <div id="chat-messages">
+                    <label>Lundi 2 Janvier</label>
+
+                    <div class="message">
+                        <img class="js-ChatPicture" src="img/user-picture.png" />
+                        <div class="bubble">
+                            Really cool stuff!
+                            <div class="corner"></div>
+                            <span>3 min</span>
+                        </div>
+                    </div>
+
+                    <div class="message right">
+                        <img src="img/user-picture.png" />
+                        <div class="bubble">
+                            Can you share a link for the tutorial?
+                            <div class="corner"></div>
+                            <span>1 min</span>
+                        </div>
+                    </div>
+
+                    <div class="message">
+                        <img class="js-ChatPicture" src="img/user-picture.png" />
+                        <div class="bubble">
+                            Yeah, hold on
+                            <div class="corner"></div>
+                            <span>Now</span>
+                        </div>
+                    </div>
+
+                    <div class="message right">
+                        <img src="img/user-picture.png" />
+                        <div class="bubble">
+                            Can you share a link for the tutorial?
+                            <div class="corner"></div>
+                            <span>1 min</span>
+                        </div>
+                    </div>
+
+                    <div class="message">
+                        <img class="js-ChatPicture" src="img/user-picture.png" />
+                        <div class="bubble">
+                            Yeah, hold on
+                            <div class="corner"></div>
+                            <span>Now</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="sendmessage">
+                    <input type="text" placeholder="Send message..." />
+                    <button id="send"></button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<script src="./js/people.js"></script>
+<script src="./js/jeu.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="./js/chat.js"></script>
+
+</body>
+
+</html>

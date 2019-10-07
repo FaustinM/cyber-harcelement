@@ -17,13 +17,13 @@ function updateLike(){
     {
         likes[i].addEventListener("click", (e) => {
             e.preventDefault();
-            const text = e.originalTarget.parentElement.parentElement.parentElement.querySelector(".likes").textContent;
+            const text = e.originalTarget.parentNode.parentNode.parentNode.querySelector(".likes").textContent;
             if(e.originalTarget.classList.contains("like")){
                 e.originalTarget.classList.toggle("like");
-                e.originalTarget.parentElement.parentElement.parentElement.querySelector(".likes").textContent = " " + (parseInt(text.replace(" ","").replace("                ", "")) - 1);
+                e.originalTarget.parentNode.parentNode.parentNode.querySelector(".likes").textContent = " " + (parseInt(text.replace(" ","").replace("                ", "")) - 1);
             } else {
                 e.originalTarget.classList.toggle("like");
-                e.originalTarget.parentElement.parentElement.parentElement.querySelector(".likes").textContent = " " + (parseInt(text.replace(" ","").replace("                ", "")) + 1);
+                e.originalTarget.parentNode.parentNode.parentNode.querySelector(".likes").textContent = " " + (parseInt(text.replace(" ","").replace("                ", "")) + 1);
             }
         })
     }
@@ -60,10 +60,13 @@ function update() {
 
 addPosts("sara", "T'es vraiment sympa ;)", 4, 4, 8, "Il y a dix minutes");
 setTimeout(() => document.getElementById("bell").classList += " active", 5000);
-setTimeout(() => document.getElementById("chat").classList.toggle("hide"), 3000);
-setTimeout(() => document.getElementById("chat").classList.toggle("hide"), 7000);
+setTimeout(() => document.getElementById("chat").classList.toggle("hide"), 1000);
 
 document.getElementById("chat").addEventListener("click", (e)=>{
     e.preventDefault();
-    document.getElementById("chatBox").classList.toggle("hide");
+    if(document.getElementById("chatBox").classList.contains("hide")){
+        document.getElementById("chatBox").classList.toggle("hide");
+    } else {
+        closeChat();
+    }
 });
