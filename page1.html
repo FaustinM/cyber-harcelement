@@ -33,7 +33,7 @@
     <meta content="https://efranelas.github.io/facebook-clone/img/splash.png" property="twitter:image">
     <link href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" rel="stylesheet">
     <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700|Questrial&display=swap" rel="stylesheet" />
     <link href="css/facebook.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
 
@@ -82,6 +82,19 @@
         </footer>
     </article>
 </template>
+
+<template id="t-chat">
+    <div class="message">
+        <img class="js-ChatPicture" src="img/user-picture.png" />
+        <div class="bubble">
+            <p class="chat-text">Marche pas...</p>
+            <div class="corner"></div>
+            <span class="time">3 min</span>
+        </div>
+    </div>
+</template>
+
+
 <header>
     <div class="container">
         <div class="inline logo-container">
@@ -227,13 +240,13 @@
 
             <main class="publications">
             </main>
-            <div id="chat" class="chat-bubble hide" style="background: url(./img/face/31.jpg) no-repeat; background-size: cover">
+            <div id="chat" class="chat-bubble hide" style="background-size: cover">
                 <div class="msgs"></div>
                 <div class="status"></div>
             </div>
             <div id="chatBox" class="chat-box hide p1">
                 <div id="chatProfile">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/1_copy.jpg" style="" class="floatingImg">
+                    <img id="js-chatImage" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/1_copy.jpg" style="" class="floatingImg">
                     <div id="close">
                         <div class="cy"></div>
                         <div class="cx"></div>
@@ -243,68 +256,35 @@
                     <span>miro@badev@gmail.com</span>
                 </div>
                 <div id="chat-messages">
-                    <label>Lundi 2 Janvier</label>
-
-                    <div class="message">
-                        <img class="js-ChatPicture" src="img/user-picture.png" />
-                        <div class="bubble">
-                            Really cool stuff!
-                            <div class="corner"></div>
-                            <span>3 min</span>
-                        </div>
-                    </div>
-
-                    <div class="message right">
-                        <img src="img/user-picture.png" />
-                        <div class="bubble">
-                            Can you share a link for the tutorial?
-                            <div class="corner"></div>
-                            <span>1 min</span>
-                        </div>
-                    </div>
-
-                    <div class="message">
-                        <img class="js-ChatPicture" src="img/user-picture.png" />
-                        <div class="bubble">
-                            Yeah, hold on
-                            <div class="corner"></div>
-                            <span>Now</span>
-                        </div>
-                    </div>
-
-                    <div class="message right">
-                        <img src="img/user-picture.png" />
-                        <div class="bubble">
-                            Can you share a link for the tutorial?
-                            <div class="corner"></div>
-                            <span>1 min</span>
-                        </div>
-                    </div>
-
-                    <div class="message">
-                        <img class="js-ChatPicture" src="img/user-picture.png" />
-                        <div class="bubble">
-                            Yeah, hold on
-                            <div class="corner"></div>
-                            <span>Now</span>
-                        </div>
-                    </div>
-
+                    <label id="js-chatDate">Lundi 2 Janvier</label>
                 </div>
 
                 <div id="sendmessage">
-                    <input type="text" placeholder="Send message..." />
+                    <input type="text" placeholder="Envoyer un message..." />
                     <button id="send"></button>
                 </div>
             </div>
         </div>
 
     </div>
+    <div class="black-fog">
+        <div class="modal">
+            <p class="message-PopUp">Question</p>
+            <div class="options">
+                <button class="btn" id="modal-yes">Erreur oui</button>
+                <button class="btn" id="modal-no">Erreur non</button>
+            </div>
+        </div>
+    </div>
 </section>
+
+<script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 <script src="./js/people.js"></script>
-<script src="./js/jeu.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="./js/chat.js"></script>
+<script src="./js/jeu.js"></script>
+
+<script src="./js/parts/demo.js"></script>
 
 </body>
 
