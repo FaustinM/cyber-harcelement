@@ -20,7 +20,7 @@ function openChat(){
                 document.getElementsByClassName("floatingImg")[0].classList.toggle("animate");
 
                 document.getElementById("chatBox").classList.remove("hide");
-                document.getElementById("close").addEventListener("click",closeChat, true);
+                document.getElementById("close").addEventListener("click",closeChat, {once : true});
     }
 }
 
@@ -63,7 +63,7 @@ function createChat(who, date){
 }
 function activeChat(handler){
     document.getElementById("chat").classList.remove("hide");
-    document.getElementById("chat").addEventListener("click", ()=>{handler}, true);
+    document.getElementById("chat").addEventListener("click", ()=>{handler}, {once : true});
 }
 function desactiveChat(){
     document.getElementById("chat").classList.add("hide")

@@ -198,7 +198,7 @@
     margin-bottom:45px;
 }
 #chat-messages div.message.right{
-    padding: 0 58px 30px 0;
+    padding: 10px 58px 30px 0;
     margin-right: -19px;
     margin-left: 19px;
 }
@@ -472,6 +472,49 @@ div.message.right .corner{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+#info.active{
+    opacity: 1;
+    animation: float 2s ease-in-out infinity;
+    pointer-events: inherit;
+}
+#info{
+    margin: 10px 10px 10px;
+    width: auto;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.6rem 3rem;
+    border: 3px solid black;
+    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    background: white;
+    font-family: "Questrial", sans-serif;
+    right: 0;
+    top: 0;
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: all 100ms ease-out;
+    -moz-transition: all 100ms ease-out;
+    -ms-transition: all 100ms ease-out;
+    -o-transition: all 100ms ease-out;
+    transition: all 100ms ease-out;
+    pointer-events: none;
+}
+@keyframes float {
+	0% {
+		box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.2);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.2);
+		transform: translatey(-5px);
+	}
+	100% {
+		box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.2);
+		transform: translatey(0px);
+	}
 }
 
 /** Emoji **/

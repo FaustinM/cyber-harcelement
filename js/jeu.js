@@ -33,7 +33,7 @@ function addPosts(pseudo, contenu, like, commentaires, partage, date, handler) {
                 e.originalTarget.parentNode.parentNode.parentNode.querySelector(".likes").textContent = " " + (parseInt(text.replace(" ","").replace("                ", "")) + 1);
             }
         });
-    clone.querySelector(".js-like").addEventListener("click", handler, true);
+    clone.querySelector(".js-like").addEventListener("click", handler, {once : true});
     mDiv.appendChild(clone);
     mDiv.scrollIntoView(false);
     setTimeout(update,500)
@@ -67,11 +67,11 @@ document.getElementById("chat").addEventListener("click", (e)=>{
 // Activer le nuage bloquant
 function activeFog(quest,oui,non,handler1,handler2){
     document.querySelector("#modal-yes").textContent = oui;
-    document.querySelector("#modal-yes").addEventListener("click", handler1, true);
-    document.querySelector("#modal-yes").addEventListener("click", ()=>{document.querySelector(".black-fog").classList.remove("active")}, true);
+    document.querySelector("#modal-yes").addEventListener("click", handler1, {once : true});
+    document.querySelector("#modal-yes").addEventListener("click", ()=>{document.querySelector(".black-fog").classList.remove("active")}, {once : true});
     document.querySelector("#modal-no").textContent = non;
-    document.querySelector("#modal-no").addEventListener("click", handler2, true);
-    document.querySelector("#modal-no").addEventListener("click", ()=>{document.querySelector(".black-fog").classList.remove("active")}, true);
+    document.querySelector("#modal-no").addEventListener("click", handler2, {once : true});
+    document.querySelector("#modal-no").addEventListener("click", ()=>{document.querySelector(".black-fog").classList.remove("active")}, {once : true});
     document.querySelector(".message-PopUp").textContent = quest;
     twemoji.parse(document.body);
     document.querySelector(".black-fog").classList.add("active");
@@ -83,11 +83,10 @@ function getHeure(){
     return (currentdate.getHours() + ":" + currentdate.getMinutes()).toString();
 }
 
-// Regler SW2
+// Function pour crée une info
 
-const Toast = Swal.mixin({
-    toast: true,
-    position: 'top-end',
-    showConfirmButton: false,
-    timer: 3000
-})
+function addInfo(message){
+    document.querySelector("#info").classList.add("active");
+    document.querySelector("#info p").textContent = message;
+    setTimeout(()=>document.querySelector("#info").classList.remove("active"), 5000)
+}

@@ -495,7 +495,7 @@ section.profile .profile-body {
         section.profile .profile-body main.publications article header a.author {
           font-size: 0.9rem;
           font-weight: 700; }
-        section.profile .profile-body main.publications article header a.date {
+        section.profile .profile-body main.publications article header p.date {
           font-size: 0.8rem;
           color: #555; }
       section.profile .profile-body main.publications article section.content {
