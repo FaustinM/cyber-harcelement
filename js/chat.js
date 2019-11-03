@@ -33,7 +33,7 @@ function sendChat(msg, time, image){
     clone.querySelector(".chat-text").textContent = msg;
     clone.querySelector(".js-ChatPicture").setAttribute("src", people[image].face);
     clone.querySelector(".bubble").classList.add("right");
-
+    new Audio('./img/chat.wav').play();
     mDiv.appendChild(clone);
     mDiv.scrollIntoView(false);
     twemoji.parse(document.querySelector("#chatBox"))
@@ -66,5 +66,6 @@ function activeChat(handler){
     document.getElementById("chat").addEventListener("click", ()=>{handler}, {once : true});
 }
 function desactiveChat(){
-    document.getElementById("chat").classList.add("hide")
+    document.getElementById("chat").classList.add("hide");
+    if(!document.getElementById("chatBox").classList.contains("hide")) closeChat()
 }
