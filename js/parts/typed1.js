@@ -1,6 +1,6 @@
 const date = new Date;
 let ecriture = new TypeIt('#line-1', {
-  speed: 80,
+  speed: 30,
   startDelay: 900
 }).type(date.toLocaleString())
     .pause(500)
