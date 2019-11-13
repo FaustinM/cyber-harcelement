@@ -1,5 +1,5 @@
 const date = new Date;
-new TypeIt('#line-1', {
+let ecriture = new TypeIt('#line-1', {
   speed: 80,
   startDelay: 900
 }).type(date.toLocaleString())
@@ -15,7 +15,10 @@ new TypeIt('#line-1', {
     .type("Quelques semaines plus tard, vous apprenez qu'il est en garde à vue pour avoir tenté de se procurer des hormones de croissance illégalement.")
     .break()
     .pause(1000)
-    .type("Après avoir été interrogé, il explique la situation qu'il a vécu au lycée, et vous, ainsi que Jacques et les autres blagueurs, recevez * des peines allant de l'avertissement aux amendes.")
+    .type("Après avoir été interrogé, il explique la situation qu'il a vécu au lycée, et vous, ainsi que Jacques et les autres blagueurs, recevez des peines allant de l'avertissement aux amendes.")
+    .break()
+    .break()
+    .type("<a href='./index.html'>Fin n°2</a>")
     .go();
 
 localStorage.clear();

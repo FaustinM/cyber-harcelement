@@ -8,7 +8,7 @@ function updatePseudo(){
 }
 
 //Ajouter un post
-function addPosts(pseudo, contenu, like, commentaires, partage, date, handler, src) {
+function addPosts(pseudo, contenu, like, commentaires, partage, date, handler, src, red) {
     let m = document.querySelector("#t-Post");
     let mDiv = document.querySelector(".publications");
     let clone = document.importNode(m.content, true);
@@ -18,6 +18,9 @@ function addPosts(pseudo, contenu, like, commentaires, partage, date, handler, s
         clone.querySelector(".author").title = people[pseudo].chatSubtitle;
     } else {
         clone.querySelector(".author").textContent = pseudo;
+    }
+    if(red){
+        clone.querySelector(".author").classList.add("red");
     }
     clone.querySelector(".date").textContent = date;
     clone.querySelector(".content p").textContent = contenu;
@@ -119,7 +122,11 @@ function removeInfo(){
 
 // Generer un post aléatoire
 function genPost(time){
-    if(!time){
+    let contenu;
+    if(Array.isArray(time)){
+        contenu = time[rand(time.length)];
+    }
+    if(!time || Array.isArray(time)){
         time = 0;
         while(time < 1000){
             time = rand(5000)
@@ -134,7 +141,7 @@ function genPost(time){
         for(let key in people){
             if(authorName===people[key].name) KEY = key;
         }
-        const contenu = randomContenu[rand(randomContenu.length)];
+        if(!contenu) contenu = randomContenu[rand(randomContenu.length)];
 
         addPosts(KEY, contenu.text, rand(), rand(), rand(), getHeure(), ()=>{}, contenu.image)
     }, time)

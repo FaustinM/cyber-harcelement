@@ -48,3 +48,26 @@ const randomContenu = [
         image : ""
     },
 ]
+
+const phraseRelou = [
+    {
+        text : "Fais gaffe quand tu fais tes lacets, on pourrait te marcher dessus ptdr",
+        image : ""
+    },
+    {
+        text : "Ils font une super soupe à auchan apparemment",
+        image : ""
+    },
+    {
+        text : "Arrêtez les mecs, c'est bas ce genre de blagues",
+        image : ""
+    },
+    {
+        text : "Comme on dit, c'est pas la taille qui compte",
+        image : ""
+    },
+        {
+        text : "faites pas ça, ça se fait pas de s'en prendre à plus petit que soi",
+        image : ""
+    },
+]

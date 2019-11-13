@@ -1,6 +1,6 @@
 const date = new Date;
-new TypeIt('#line-1', {
-  speed: 80,
+let ecriture = new TypeIt('#line-1', {
+  speed: 30,
   startDelay: 900
 })
     .type(date.toLocaleString())
@@ -19,3 +19,18 @@ new TypeIt('#line-1', {
     .break()
     .type("<a href='./page2.html'>Suite...</a>")
     .go();
+
+
+document.addEventListener('keydown', (e) => {
+    console.log("h")
+  if (e.key = "S"){
+    ecriture.options({
+        speed: 0.001,
+        startDelay: 900
+    })
+  }
+
+});
+document.addEventListener('keyup', (e) => {
+
+});

@@ -1,6 +1,9 @@
 html {
     scroll-behavior: smooth
 }
+.red {
+    color: #e15555;
+}
 @keyframes fade {
     from {
         opacity : 0
